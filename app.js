@@ -1,5 +1,5 @@
 // CREO L'ARRAY DI OGGETTI PER IL CAROUSEL
-const items = [
+const arrayObject = [
     {
         titolo: 'Svezia',
         immagine: 'img/01.jpg',
@@ -26,37 +26,43 @@ const items = [
         descrizione: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
     },
 ]
-console.log(items);
+console.log(arrayObject);
+
+// CREO LA VARIABILE COLLEGATA ALLO SLIDER-WRAPPER DELL'HTML
+const sliderWrapper = document.querySelector('.ms__slider_wrapper');
+console.log(sliderWrapper);
 
 // CREO LA VARIABILE COLLEGATA ALL'ITEM-WRAPPER DELL'HTML
 const itemWrapper = document.querySelector('.ms__item_wrapper');
 console.log(itemWrapper);
 
 // CREO IL CICLO FOREACH PER INSERIRE LE IMMAGINI
-items.forEach((element) => {
+arrayObject.forEach((element) => {
 
+    // CREO DIV DENTRO LO SLIDER-WRAPPER
+    const slider = document.createElement('div');
+    console.log(slider);
+
+    // ASSEGNO LA CLASSE "SLIDER" AL DIV CREATO IN PRECEDENZA
+    sliderWrapper.append(slider);
+    slider.classList.add('slider');
+
+    // INSERISCO L'IMMAGINE CICLATA ATTRAVERSO IL TEMPLATE LITERAL
+    slider.innerHTML = `<img src="${element.immagine}" alt="${element.titolo}">`;
+
+    // CREO DIV DENTRO L'ITEM-WRAPPER
     const itemBox = document.createElement('div');
     console.log(itemBox);
 
+    // ASSEGNO LA CLASSE "ITEM" AL DIV CREATO IN PRECEDENZA
     itemWrapper.append(itemBox);
     itemBox.classList.add('item');
 
+    // INSERISCO L'IMMAGINE CICLATA ATTRAVERSO IL TEMPLATE LITERAL
     itemBox.innerHTML = `<img src="${element.immagine}" alt="${element.titolo}">`;
 
     console.log(element);
 })
-
-// // CREO LA VARIABILE COLLEGATA ALLO SLIDER-WRAPPER DELL'HTML
-// const sliderWrapper = document.querySelector('.ms__slider_wrapper');
-// console.log(sliderWrapper);
-
-// // CREO IL CONTENITORE DENTRO LO SLIDER-WRAPPER
-// const slider = document.createElement('div');
-// console.log(slider);
-
-// // ASSEGNO LA CLASSE "SLIDER" AL CONTENITORE CREATO IN PRECEDENZA, CON LE MIE REGOLE CSS GIÀ APPLICATE
-// sliderWrapper.append(slider);
-// slider.classList.add('slider');
 
 // // VARIABILE CURRENT INDEX
 // let currentIndex = 0;
