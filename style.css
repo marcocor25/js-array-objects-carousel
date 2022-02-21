@@ -8,13 +8,6 @@ img {
     user-select: none;
 }
 
-.active {
-}
-
-.item.active_bis {
-    filter: brightness(1);
-}
-
 .ms__fluid {
     height: 100vh;
 }
