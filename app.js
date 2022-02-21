@@ -1,57 +1,62 @@
 // CREO L'ARRAY DI OGGETTI PER IL CAROUSEL
 const items = [
     {
-        name: 'Svezia',
-        image: 'img/01.jpg',
-        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
+        titolo: 'Svezia',
+        immagine: 'img/01.jpg',
+        descrizione: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum corporis.',
     },
     {
-        name: 'Svizzera',
-        image: 'img/02.jpg',
-        text: 'Lorem ipsum',
+        titolo: 'Svizzera',
+        immagine: 'img/02.jpg',
+        descrizione: 'Lorem ipsum',
     },
     {
-        name: 'Gran Bretagna',
-        image: 'img/03.jpg',
-        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
+        titolo: 'Gran Bretagna',
+        immagine: 'img/03.jpg',
+        descrizione: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit.',
     },
     {
-        name: 'Germania',
-        image: 'img/04.jpg',
-        text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
+        titolo: 'Germania',
+        immagine: 'img/04.jpg',
+        descrizione: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
     },
     {
-        name: 'Paradise',
-        image: 'img/05.jpg',
-        text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
+        titolo: 'Paradise',
+        immagine: 'img/05.jpg',
+        descrizione: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
     },
 ]
-
 console.log(items);
-
-// CREO LA VARIABILE COLLEGATA ALLO SLIDER-WRAPPER DELL'HTML
-const sliderWrapper = document.querySelector('.ms__slider_wrapper');
-console.log(sliderWrapper);
-
-// CREO IL CONTENITORE DENTRO LO SLIDER-WRAPPER
-const slider = document.createElement('div');
-console.log(slider);
-
-// ASSEGNO LA CLASSE "SLIDER" AL CONTENITORE CREATO IN PRECEDENZA, CON LE MIE REGOLE CSS GIÀ APPLICATE
-sliderWrapper.append(slider);
-slider.classList.add('slider');
-
-// CREO IL TAG IMMAGINE DENTRO IL CONTENITORE "SLIDER"
-const sliderImage = document.createElement('img');
-console.log(sliderImage);
-
-// ASSEGNO L'IMMAGINE AL TAG IMG
-slider.append(sliderImage);
-sliderImage.src = null;
 
 // CREO LA VARIABILE COLLEGATA ALL'ITEM-WRAPPER DELL'HTML
 const itemWrapper = document.querySelector('.ms__item_wrapper');
 console.log(itemWrapper);
+
+// CREO IL CICLO FOREACH PER INSERIRE LE IMMAGINI
+items.forEach((element) => {
+
+    const itemBox = document.createElement('div');
+    console.log(itemBox);
+
+    itemWrapper.append(itemBox);
+    itemBox.classList.add('item');
+
+    itemBox.innerHTML = `<img src="${element.immagine}" alt="${element.titolo}">`;
+
+    console.log(element);
+})
+
+// // CREO LA VARIABILE COLLEGATA ALLO SLIDER-WRAPPER DELL'HTML
+// const sliderWrapper = document.querySelector('.ms__slider_wrapper');
+// console.log(sliderWrapper);
+
+// // CREO IL CONTENITORE DENTRO LO SLIDER-WRAPPER
+// const slider = document.createElement('div');
+// console.log(slider);
+
+// // ASSEGNO LA CLASSE "SLIDER" AL CONTENITORE CREATO IN PRECEDENZA, CON LE MIE REGOLE CSS GIÀ APPLICATE
+// sliderWrapper.append(slider);
+// slider.classList.add('slider');
 
 // // VARIABILE CURRENT INDEX
 // let currentIndex = 0;
